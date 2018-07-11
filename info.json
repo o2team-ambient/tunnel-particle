@@ -1,9 +1,9 @@
 {
-  "author": "<%= author %>",
-  "demoUrl": "<%= demoUrl %>",
-  "title": "<%= appName %>",
-  "github": "<%= github %>",
-  "demoSnippet": "{{__snippet__}}",
-  "controlUrl": "{{__control__}}",
-  "configUrl": "{{__config__}}"
+  "author": "liujianchao1",
+  "demoUrl": "http://jdc.jd.com/demo/ambient/tunnel-particle/",
+  "title": "tunnel-particle",
+  "github": "https://github.com/o2team-ambient/tunnel-particle",
+  "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-tunnel-particle.css?t=1531292384000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\">\n    <script src=\"https://cdn.jsdelivr.net/npm/three@0.94.0/build/three.min.js\"></script>\n  </div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-tunnel-particle.js?t=1531292384000\"></script>",
+  "controlUrl": "//storage.jd.com/ambient/control-tunnel-particle.js?t=1531292384000",
+  "configUrl": "//storage.jd.com/ambient/config-tunnel-particle.js?t=1531292384000"
 }

@@ -1,8 +1,10 @@
 import './utils/raf'
 import {
   O2_AMBIENT_INIT,
-  O2_AMBIENT_CONFIG
+  O2_AMBIENT_CONFIG,
+  O2_AMBIENT_MAIN
 } from './utils/const'
+import Ambient from './ambient/'
 
 // 判断是否可点，被点中则隐藏
 const wrapper = document.querySelector('.o2team_ambient_main')
@@ -11,10 +13,10 @@ wrapper.addEventListener('click', () => {
 })
 
 // 初始化函数
-function initAmbient () {
-  // let xxx = new XXX()
+function initAmbient() {
+  let ambient = new Ambient()
   // 主函数暴露
-  // window[O2_AMBIENT_MAIN] = xxx
+  window[O2_AMBIENT_MAIN] = ambient
 }
 
 // 初始化函数
@@ -28,5 +30,5 @@ try {
     initAmbient()
   }, 1000)
 } catch (e) {
-  console.log(e) 
+  console.log(e)
 }
