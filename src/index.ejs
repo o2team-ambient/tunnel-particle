@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
   <title>demo</title>
+  <% if (htmlWebpackPlugin.options.filename==='index_demo.html'){ %>
+    <script type="text/javascript" src="//storage.jd.com/ambient-global/ambient-autoStop-head.js"></script>
+  <% } %>
 </head>
 
 <body>
@@ -14,6 +17,9 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.94.0/build/three.min.js"></script>
   </div>
   <!-- E 主体内容 -->
+  <% if (htmlWebpackPlugin.options.filename==='index_demo.html'){ %>
+    <script type="text/javascript" src="//storage.jd.com/ambient-global/ambient-autoStop-body.js"></script>
+  <% } %>
 </body>
 
 </html>

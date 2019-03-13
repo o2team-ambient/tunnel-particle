@@ -60,13 +60,10 @@ let controlInit = () => {
     initTextureGUI() {
       // demo code
       const gui = this.gui
-      const textures = this.config.textures
+      const config = this.config
       const texturesFolder = gui.addFolder('纹理')
-      textures && Object.keys(textures).forEach((key, idx) => {
-        const textureController = texturesFolder.add(textures, key).name(`纹理${idx + 1}`)
-        textureController.onFinishChange(val => {
-          this.resetCanvas()
-        })
+      texturesFolder.add(config, 'textures').name(`纹理列表`).onFinishChange(val => {
+        this.resetCanvas()
       })
       texturesFolder.open()
 

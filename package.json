@@ -10,7 +10,7 @@
   "author": "liujianchao1",
   "license": "ISC",
   "dependencies": {
-    "@o2team/ambient-dat.gui": "^0.7.7",
+    "@o2team/ambient-dat.gui": "^0.7.9",
     "lodash": "^4.17.10"
   },
   "devDependencies": {
