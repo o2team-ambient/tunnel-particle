@@ -1,7 +1,7 @@
 {
   "author": "liujianchao1",
-  "demoUrl": "http://jdc.jd.com/demo/ambient/tunnel-particle/",
-  "miniDemoUrl": "http://jdc.jd.com/demo/ambient/tunnel-particle/index_demo.html",
+  "demoUrl": "//o2team-ambient.github.io/tunnel-particle/dist/",
+  "miniDemoUrl": "//o2team-ambient.github.io/tunnel-particle/dist/index_demo.html",
   "title": "tunnel-particle",
   "ambName": "隧道",
   "github": "https://github.com/o2team-ambient/tunnel-particle",
