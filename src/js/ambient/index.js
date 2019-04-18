@@ -1,10 +1,22 @@
 import debounce from 'lodash/debounce'
 import {
-  O2_AMBIENT_CLASSNAME,
-  O2_AMBIENT_CONFIG
+  O2_AMBIENT_CLASSNAME
 } from "../utils/const"
 import AmbientBase from './ambient-base'
 import { getDevicePixelRatio } from '../utils/util'
+import {
+  WebGLRenderer,
+  Scene,
+  Fog,
+  PerspectiveCamera,
+  Vector3,
+  CatmullRomCurve3,
+  Geometry,
+  Color,
+  PointsMaterial,
+  VertexColors,
+  Points
+} from 'three'
 
 class Tunner extends AmbientBase {
   constructor() {
@@ -65,7 +77,7 @@ class Tunner extends AmbientBase {
   }
 
   initRenderer() {
-    const renderer = new THREE.WebGLRenderer({
+    const renderer = new WebGLRenderer({
       canvas: this.canvas
     })
     renderer.setSize(this.width, this.height)
@@ -73,13 +85,13 @@ class Tunner extends AmbientBase {
   }
 
   initScene() {
-    const scene = new THREE.Scene()
-    scene.fog = new THREE.Fog(0x000000, 30, 150)
+    const scene = new Scene()
+    scene.fog = new Fog(0x000000, 30, 150)
     this.scene = scene
   }
 
   initCamera() {
-    const camera = new THREE.PerspectiveCamera(45, this.width / this.height, 0.1, 150)
+    const camera = new PerspectiveCamera(45, this.width / this.height, 0.1, 150)
     camera.position.y = 400
     camera.position.z = 400
     this.camera = camera
@@ -104,10 +116,10 @@ class Tunner extends AmbientBase {
       const x = points[i][0]
       const y = Math.random() * 100
       const z = points[i][1]
-      points[i] = new THREE.Vector3(x, y, z)
+      points[i] = new Vector3(x, y, z)
     }
     // Create a path from the points
-    const path = new THREE.CatmullRomCurve3(points)
+    const path = new CatmullRomCurve3(points)
     path.closed = true
 
     // Define the precision of the finale tube, the amount of divisions
@@ -121,10 +133,10 @@ class Tunner extends AmbientBase {
     const frames = path.computeFrenetFrames(tubeDetail, true)
 
     // Create an empty Geometry where we will put the particles
-    const geometry = new THREE.Geometry()
+    const geometry = new Geometry()
 
     // Define a basic color
-    // const color = new THREE.Color(0x000000)
+    // const color = new Color(0x000000)
 
     // First loop through all the circles
     for (let i = 0; i < tubeDetail; i++) {
@@ -151,7 +163,7 @@ class Tunner extends AmbientBase {
         const cos = -Math.cos(angle)
 
         // Calculate the normal of each point based on its angle
-        const normalPoint = new THREE.Vector3(0, 0, 0)
+        const normalPoint = new Vector3(0, 0, 0)
         normalPoint.x = (cos * normal.x) + (sin * binormal.x)
         normalPoint.y = (cos * normal.y) + (sin * binormal.y)
         normalPoint.z = (cos * normal.z) + (sin * binormal.z)
@@ -160,19 +172,19 @@ class Tunner extends AmbientBase {
 
         // We add the normal values for each point
         position.add(normalPoint)
-        const color = new THREE.Color(`hsl(${index * 360 * 4}, 100%, 50%)`)
+        const color = new Color(`hsl(${index * 360 * 4}, 100%, 50%)`)
         geometry.colors.push(color)
         geometry.vertices.push(position)
       }
     }
 
     // Material for the points
-    const material = new THREE.PointsMaterial({
+    const material = new PointsMaterial({
       size: 0.2,
-      vertexColors: THREE.VertexColors
+      vertexColors: VertexColors
     })
 
-    const tube = new THREE.Points(geometry, material)
+    const tube = new Points(geometry, material)
     // Add tube into the scene
     this.scene.add(tube)
     this.tube = tube
