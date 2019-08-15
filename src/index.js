@@ -18,4 +18,4 @@ try {
 }
 
 Report.init({})
-Report.processPV()
+Report.processPV(37)
