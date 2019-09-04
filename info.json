@@ -5,9 +5,9 @@
   "title": "tunnel_particle",
   "ambName": "隧道",
   "github": "https://github.com/o2team-ambient/tunnel-particle",
-  "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-tunnel_particle.css?t=1566464483000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\"></div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-tunnel_particle.js?t=1566464483000\"></script>",
-  "controlUrl": "//storage.jd.com/ambient/control-tunnel_particle.js?t=1566464483000",
-  "configUrl": "//storage.jd.com/ambient/config-tunnel_particle.js?t=1566464483000",
+  "demoSnippet": "<link href=\"//storage.jd.com/ambient/styles-tunnel_particle.css?t=1567590348000\" rel=\"stylesheet\"></link><!-- S 主体内容 -->\n  <div class=\"o2team_ambient_main\"></div>\n  <!-- E 主体内容 --><script src=\"//storage.jd.com/ambient/bundle-tunnel_particle.js?t=1567590348000\"></script>",
+  "controlUrl": "//storage.jd.com/ambient/control-tunnel_particle.js?t=1567590348000",
+  "configUrl": "//storage.jd.com/ambient/config-tunnel_particle.js?t=1567590348000",
   "placeholderImg": "//storage.jd.com/ambient/tunnel-particle_placeholder.png?t=1554278571000",
   "gifImg": "//storage.jd.com/ambient/tunnel-particle_motion.gif?t=1554047695000",
   "spriteImg": "//storage.jd.com/ambient/tunnel-particle_sprite.png?t=1554278571000"
